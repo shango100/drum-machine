@@ -2,23 +2,54 @@
 
 #drum-machine {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh; /* Adjust the height as needed */
+    min-height: 50vh; /* Set a minimum height of 50% of the viewport height */
+    max-height: 80vh; /* Set a maximum height of 80% of the viewport height */
+    min-width: 50vh;
+    max-width: 80vh;
+    background-color: #f0f0f0; /* Background color for the DrumMachine */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    border-radius: 10px; /* Border radius for rounded corners */
+    padding: 5px; /* Adjusted padding for internal spacing */
+    margin: 20px; /* Margin for external spacing */
+    overflow-y: auto; /* Add vertical scroll if content exceeds the maximum height */
+}
+
+.drum-pad-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px; /* Adjust the gap between drum pads */
 }
 
 .drum-pad {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px; /* Adjust the width as needed */
-    height: 100px; /* Adjust the height as needed */
-    margin: 10px; /* Adjust the margin as needed */
-    background-color: #3498db; /* Example background color */
-    color: #fff; /* Example text color */
-    font-size: 24px; /* Adjust the font size as needed */
+    width: 80px;
+    height: 80px;
+    background-color: #3498db; /* Example visually appealing color */
+    color: #fff;
+    font-size: 18px;
     cursor: pointer;
+    border-radius: 8px; /* Rounded corners for a smoother look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth transition for visual effect */
 }
 
-/* Add additional styling as needed */
+.drum-pad:hover,
+.drum-pad:active {
+    background-color: #2980b9; /* Darker color when hovered or pressed */
+}
+
+/* Display text styling */
+#display {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px; /* Adjusted margin for spacing */
+    padding: 5px;
+    background-color: #2ecc71; /* Example screen color */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
